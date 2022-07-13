@@ -1,7 +1,10 @@
 import logo from '../../logo.svg';
 import CardA from '../card-class/CardA';
-import CardB from '../card-function/CardB';
+import {CardB, CardF} from '../card-function/CardB';
+import { CardC } from '../card-class/CardC';
+import CardD from '../card-function/CardD';
 import './App.css';
+
 
 // some random data
 const users = [
@@ -20,10 +23,15 @@ const users = [
 ]
 
 function App() {
+
+  const userData = users.map((user) => <CardA name={user.name} role={user.role} />)
+  //find a way to display each person's image
   return (
     <div>
-      {/* <CardA/>
-      <CardB/> */}
+      {/* <CardA name={'Janey Doey'} role={'Softwarey Engineery'}/>
+      <CardB name={'Johny Doey'} role={'Architecture'}/>
+      <CardF name={'Johny Doey'} role={'Architecture'}/> */}
+      {userData}
     </div>
   );
 }
